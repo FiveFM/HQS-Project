@@ -38,7 +38,6 @@ namespace Calculator
             this.txtSom = new System.Windows.Forms.TextBox();
             this.btnBereken = new System.Windows.Forms.Button();
             this.lbSom = new System.Windows.Forms.Label();
-            this.lbActie = new System.Windows.Forms.Label();
             this.RadioOptellen = new System.Windows.Forms.RadioButton();
             this.radioAftrekken = new System.Windows.Forms.RadioButton();
             this.radioVermenigvuldigen = new System.Windows.Forms.RadioButton();
@@ -51,6 +50,9 @@ namespace Calculator
             this.radioEven = new System.Windows.Forms.RadioButton();
             this.radioFionacci = new System.Windows.Forms.RadioButton();
             this.radioPriem = new System.Windows.Forms.RadioButton();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbGetal1
@@ -99,6 +101,7 @@ namespace Calculator
             // 
             this.txtUitkomst.Location = new System.Drawing.Point(115, 101);
             this.txtUitkomst.Name = "txtUitkomst";
+            this.txtUitkomst.ReadOnly = true;
             this.txtUitkomst.Size = new System.Drawing.Size(141, 22);
             this.txtUitkomst.TabIndex = 5;
             // 
@@ -106,6 +109,7 @@ namespace Calculator
             // 
             this.txtSom.Location = new System.Drawing.Point(115, 129);
             this.txtSom.Name = "txtSom";
+            this.txtSom.ReadOnly = true;
             this.txtSom.Size = new System.Drawing.Size(141, 22);
             this.txtSom.TabIndex = 6;
             // 
@@ -117,6 +121,7 @@ namespace Calculator
             this.btnBereken.TabIndex = 8;
             this.btnBereken.Text = "Bereken";
             this.btnBereken.UseVisualStyleBackColor = true;
+            this.btnBereken.Click += new System.EventHandler(this.btnBereken_Click);
             // 
             // lbSom
             // 
@@ -127,20 +132,10 @@ namespace Calculator
             this.lbSom.TabIndex = 9;
             this.lbSom.Text = "Som";
             // 
-            // lbActie
-            // 
-            this.lbActie.AutoSize = true;
-            this.lbActie.Location = new System.Drawing.Point(355, 26);
-            this.lbActie.Name = "lbActie";
-            this.lbActie.Size = new System.Drawing.Size(39, 17);
-            this.lbActie.TabIndex = 10;
-            this.lbActie.Text = "Actie";
-            this.lbActie.Click += new System.EventHandler(this.lbActie_Click);
-            // 
             // RadioOptellen
             // 
             this.RadioOptellen.AutoSize = true;
-            this.RadioOptellen.Location = new System.Drawing.Point(358, 46);
+            this.RadioOptellen.Location = new System.Drawing.Point(6, 21);
             this.RadioOptellen.Name = "RadioOptellen";
             this.RadioOptellen.Size = new System.Drawing.Size(82, 21);
             this.RadioOptellen.TabIndex = 11;
@@ -152,40 +147,43 @@ namespace Calculator
             // radioAftrekken
             // 
             this.radioAftrekken.AutoSize = true;
-            this.radioAftrekken.Location = new System.Drawing.Point(358, 73);
+            this.radioAftrekken.Location = new System.Drawing.Point(6, 48);
             this.radioAftrekken.Name = "radioAftrekken";
             this.radioAftrekken.Size = new System.Drawing.Size(89, 21);
             this.radioAftrekken.TabIndex = 12;
             this.radioAftrekken.TabStop = true;
             this.radioAftrekken.Text = "Aftrekken";
             this.radioAftrekken.UseVisualStyleBackColor = true;
+            this.radioAftrekken.CheckedChanged += new System.EventHandler(this.radioAftrekken_CheckedChanged);
             // 
             // radioVermenigvuldigen
             // 
             this.radioVermenigvuldigen.AutoSize = true;
-            this.radioVermenigvuldigen.Location = new System.Drawing.Point(358, 101);
+            this.radioVermenigvuldigen.Location = new System.Drawing.Point(6, 75);
             this.radioVermenigvuldigen.Name = "radioVermenigvuldigen";
             this.radioVermenigvuldigen.Size = new System.Drawing.Size(142, 21);
             this.radioVermenigvuldigen.TabIndex = 13;
             this.radioVermenigvuldigen.TabStop = true;
             this.radioVermenigvuldigen.Text = "Vermenigvuldigen";
             this.radioVermenigvuldigen.UseVisualStyleBackColor = true;
+            this.radioVermenigvuldigen.CheckedChanged += new System.EventHandler(this.radioVermenigvuldigen_CheckedChanged);
             // 
             // radioDelen
             // 
             this.radioDelen.AutoSize = true;
-            this.radioDelen.Location = new System.Drawing.Point(358, 130);
+            this.radioDelen.Location = new System.Drawing.Point(6, 102);
             this.radioDelen.Name = "radioDelen";
             this.radioDelen.Size = new System.Drawing.Size(66, 21);
             this.radioDelen.TabIndex = 14;
             this.radioDelen.TabStop = true;
             this.radioDelen.Text = "Delen";
             this.radioDelen.UseVisualStyleBackColor = true;
+            this.radioDelen.CheckedChanged += new System.EventHandler(this.radioDelen_CheckedChanged);
             // 
             // radioKwadraad
             // 
             this.radioKwadraad.AutoSize = true;
-            this.radioKwadraad.Location = new System.Drawing.Point(358, 156);
+            this.radioKwadraad.Location = new System.Drawing.Point(6, 129);
             this.radioKwadraad.Name = "radioKwadraad";
             this.radioKwadraad.Size = new System.Drawing.Size(92, 21);
             this.radioKwadraad.TabIndex = 15;
@@ -196,7 +194,7 @@ namespace Calculator
             // radioWortel
             // 
             this.radioWortel.AutoSize = true;
-            this.radioWortel.Location = new System.Drawing.Point(358, 183);
+            this.radioWortel.Location = new System.Drawing.Point(6, 156);
             this.radioWortel.Name = "radioWortel";
             this.radioWortel.Size = new System.Drawing.Size(70, 21);
             this.radioWortel.TabIndex = 16;
@@ -221,6 +219,7 @@ namespace Calculator
             this.btnToon.TabIndex = 21;
             this.btnToon.Text = "Toon";
             this.btnToon.UseVisualStyleBackColor = true;
+            this.btnToon.Click += new System.EventHandler(this.btnToon_Click);
             // 
             // richTextBox1
             // 
@@ -241,6 +240,7 @@ namespace Calculator
             this.radioEven.TabStop = true;
             this.radioEven.Text = "Even getallen (25 Getallen)";
             this.radioEven.UseVisualStyleBackColor = true;
+            this.radioEven.CheckedChanged += new System.EventHandler(this.radioEven_CheckedChanged);
             // 
             // radioFionacci
             // 
@@ -252,6 +252,7 @@ namespace Calculator
             this.radioFionacci.TabStop = true;
             this.radioFionacci.Text = "Fibonacci reeks (10 Getallen)";
             this.radioFionacci.UseVisualStyleBackColor = true;
+            this.radioFionacci.CheckedChanged += new System.EventHandler(this.radioFionacci_CheckedChanged);
             // 
             // radioPriem
             // 
@@ -263,6 +264,32 @@ namespace Calculator
             this.radioPriem.TabStop = true;
             this.radioPriem.Text = "Priem Getallen (10 Getallen)";
             this.radioPriem.UseVisualStyleBackColor = true;
+            this.radioPriem.CheckedChanged += new System.EventHandler(this.radioPriem_CheckedChanged);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(775, 592);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 26;
+            this.btnExit.Text = "E&xit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioVermenigvuldigen);
+            this.groupBox1.Controls.Add(this.RadioOptellen);
+            this.groupBox1.Controls.Add(this.radioAftrekken);
+            this.groupBox1.Controls.Add(this.radioDelen);
+            this.groupBox1.Controls.Add(this.radioKwadraad);
+            this.groupBox1.Controls.Add(this.radioWortel);
+            this.groupBox1.Location = new System.Drawing.Point(296, 33);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(231, 206);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Actie";
             // 
             // Form1
             // 
@@ -270,19 +297,14 @@ namespace Calculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(870, 627);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.radioPriem);
             this.Controls.Add(this.radioFionacci);
             this.Controls.Add(this.radioEven);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnToon);
             this.Controls.Add(this.lbReeksen);
-            this.Controls.Add(this.radioWortel);
-            this.Controls.Add(this.radioKwadraad);
-            this.Controls.Add(this.radioDelen);
-            this.Controls.Add(this.radioVermenigvuldigen);
-            this.Controls.Add(this.radioAftrekken);
-            this.Controls.Add(this.RadioOptellen);
-            this.Controls.Add(this.lbActie);
             this.Controls.Add(this.lbSom);
             this.Controls.Add(this.btnBereken);
             this.Controls.Add(this.txtSom);
@@ -296,6 +318,8 @@ namespace Calculator
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,7 +336,6 @@ namespace Calculator
         private System.Windows.Forms.TextBox txtSom;
         private System.Windows.Forms.Button btnBereken;
         private System.Windows.Forms.Label lbSom;
-        private System.Windows.Forms.Label lbActie;
         private System.Windows.Forms.RadioButton RadioOptellen;
         private System.Windows.Forms.RadioButton radioAftrekken;
         private System.Windows.Forms.RadioButton radioVermenigvuldigen;
@@ -325,6 +348,8 @@ namespace Calculator
         private System.Windows.Forms.RadioButton radioEven;
         private System.Windows.Forms.RadioButton radioFionacci;
         private System.Windows.Forms.RadioButton radioPriem;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
