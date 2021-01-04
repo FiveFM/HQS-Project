@@ -31,14 +31,7 @@ namespace Calculator
         private void lbActie_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            txtSom.Text = "+";
-        }
-
-       
+        }       
             
         private void btnBereken_Click(object sender, EventArgs e)
         {
@@ -95,6 +88,11 @@ namespace Calculator
         {
             this.Close();
         }
+        
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSom.Text = "+";
+        }
 
         private void radioAftrekken_CheckedChanged(object sender, EventArgs e)
         {
@@ -115,18 +113,18 @@ namespace Calculator
         }
         private void radiokwadraad_CheckedChanged(object sender, EventArgs e)
         {
-            txtSom.Text = "²"; 
+
+            txtSom.Text = "²";
             checkChecker();
         }
-        private void radioWortelCheckedChanged(object sender, EventArgs e)
+        private void radioWortel_CheckedChanged(object sender, EventArgs e)
         {
+
             txtSom.Text = "√";
-          checkChecker();
-            
+            checkChecker(); 
         }
 
         public void checkChecker() {
-            Console.WriteLine(radioWortel.Checked);
             if(radioWortel.Checked == true) {
 
             txtGetal2.Enabled = false;

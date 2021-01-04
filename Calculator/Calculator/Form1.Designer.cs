@@ -107,6 +107,7 @@ namespace Calculator
             // 
             // txtSom
             // 
+            this.txtSom.Enabled = false;
             this.txtSom.Location = new System.Drawing.Point(115, 129);
             this.txtSom.Name = "txtSom";
             this.txtSom.ReadOnly = true;
@@ -190,6 +191,7 @@ namespace Calculator
             this.radioKwadraad.TabStop = true;
             this.radioKwadraad.Text = "Kwadraad";
             this.radioKwadraad.UseVisualStyleBackColor = true;
+            this.radioKwadraad.CheckedChanged += new System.EventHandler(this.radiokwadraad_CheckedChanged);
             // 
             // radioWortel
             // 
@@ -201,6 +203,7 @@ namespace Calculator
             this.radioWortel.TabStop = true;
             this.radioWortel.Text = "Wortel";
             this.radioWortel.UseVisualStyleBackColor = true;
+            this.radioWortel.CheckedChanged += new System.EventHandler(this.radioWortel_CheckedChanged);
             // 
             // lbReeksen
             // 
