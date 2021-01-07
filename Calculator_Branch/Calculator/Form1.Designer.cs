@@ -107,6 +107,7 @@ namespace Calculator
             // 
             // txtUitkomst
             // 
+            this.txtUitkomst.Enabled = false;
             this.txtUitkomst.Location = new System.Drawing.Point(86, 82);
             this.txtUitkomst.Margin = new System.Windows.Forms.Padding(2);
             this.txtUitkomst.Name = "txtUitkomst";
@@ -123,6 +124,7 @@ namespace Calculator
             this.txtSom.ReadOnly = true;
             this.txtSom.Size = new System.Drawing.Size(107, 20);
             this.txtSom.TabIndex = 6;
+            this.txtSom.Text = "+";
             // 
             // btnBereken
             // 
