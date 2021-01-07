@@ -33,7 +33,7 @@ namespace Calculator
             catch (System.Exception)
             {
             }
-            //
+            
             //Add
             if (RadioOptellen.Checked)
             {
