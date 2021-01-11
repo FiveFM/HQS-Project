@@ -294,15 +294,5 @@ namespace Calculator
                 }
             }
         }
-
-        private void HQS_Calculator_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbGenerated_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
