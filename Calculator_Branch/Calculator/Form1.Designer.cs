@@ -435,7 +435,6 @@ namespace Calculator
             this.Name = "HQS_Calculator";
             this.Sizable = false;
             this.Text = "HQS Calculator";
-            this.Load += new System.EventHandler(this.HQS_Calculator_Load);
             this.ActionBox.ResumeLayout(false);
             this.ActionBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reeksAmount)).EndInit();
