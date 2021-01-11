@@ -7,116 +7,120 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Calculator
 {
-    public partial class Form1 : Form
+    public partial class HQS_Calculator : MaterialForm
 
     {
-        public Form1()
+        public HQS_Calculator()
         {
             InitializeComponent();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
 
-
-
-        private void btnBereken_Click(object sender, EventArgs e)
+        private void radioSelect(object sender, EventArgs e)
         {
-
             //Get number values
-            double num1 = Convert.ToDouble(txtGetal1.Text);
+            double num1 = 0;
             double num2 = 0;
             try
             {
+                num1 = Convert.ToDouble(txtGetal1.Text);
                 num2 = Convert.ToDouble(txtGetal2.Text);
             }
             catch (System.Exception)
             {
             }
-            
-            //Add
-            if (RadioOptellen.Checked)
+
+
+            foreach (RadioButton button in ActionBox.Controls.OfType<RadioButton>())
             {
-                displayTotal(num1 + num2);
+                if (button.Checked)
+                {
+                    int caseID = Convert.ToInt32(button.Tag);
+                    switch (caseID)
+                    {
+                        case 1:
+                            checkChecker();
+                            break;
+                        case 2:
+                            checkChecker();
+                            break;
+                        case 3:
+                            checkChecker();
+                            break;
+                        case 4:
+                            checkChecker();
+                            break;
+                        case 5:
+                            checkChecker();
+                            break;
+                        case 6:
+                            checkChecker();
+                            break;
+                    }
+                }
             }
-            //Multiply
-            else if (radioVermenigvuldigen.Checked)
+        }
+
+        private void calc_Click(object sender, EventArgs e)
+        {
+            //Get number values
+            double num1 = 0;
+            double num2 = 0;
+            try
             {
-                displayTotal(num1 * num2);
+                num1 = Convert.ToDouble(txtGetal1.Text);
+                num2 = Convert.ToDouble(txtGetal2.Text);
             }
-            //Substract
-            else if (radioAftrekken.Checked)
+            catch (System.Exception)
             {
-                displayTotal(num1 - num2);
             }
-            //Divide
-            else if (radioDelen.Checked)
+
+            foreach (RadioButton button in ActionBox.Controls.OfType<RadioButton>())
             {
-                displayTotal(num1 / num2);
+                if (button.Checked)
+                {
+                    int caseID = Convert.ToInt32(button.Tag);
+                    switch (caseID)
+                    {
+                        case 1:
+                            txtUitkomst.Text = (num1 + num2).ToString();
+                            break;
+                        case 2:
+                            txtUitkomst.Text = (num1 - num2).ToString();
+                            break;
+                        case 3:
+                            txtUitkomst.Text = (num1 * num2).ToString();
+                            break;
+                        case 4:
+                            txtUitkomst.Text = (num1 / num2).ToString();
+                            break;
+                        case 5:
+                            txtUitkomst.Text = (Math.Pow(num1, num2)).ToString();
+                            break;
+                        case 6:
+                            txtUitkomst.Text = (Math.Sqrt(num1)).ToString();
+                            break;
+                    }
+                }
             }
-            //Squared
-            else if (radioKwadraad.Checked)
-            {
-                displayTotal(Math.Pow(num1, num2));
-            }
-            //Root
-            else if (radioWortel.Checked)
-            {
-                displayTotal(Math.Sqrt(num1));
-            }
-        }
-
-        //Calculated value
-        public void displayTotal(double Total)
-        {
-            txtUitkomst.Text = Total.ToString();
-        }
-
-        //Close program on click
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void add_CheckedChanged(object sender, EventArgs e)
-        {
-            txtSom.Text = "+";
-            checkChecker();
-        }
-
-        private void substract_CheckedChanged(object sender, EventArgs e)
-        {
-            txtSom.Text = "-";
-            checkChecker();
-        }
-
-        private void times_CheckedChanged(object sender, EventArgs e)
-        {
-            txtSom.Text = "X";
-            checkChecker();
-        }
-
-        private void divide_CheckedChanged(object sender, EventArgs e)
-        {
-            txtSom.Text = "/";
-            checkChecker();
-        }
-        private void squared_CheckedChanged(object sender, EventArgs e)
-        {
-
-            txtSom.Text = "²";
-            checkChecker();
-        }
-        private void root_CheckedChanged(object sender, EventArgs e)
-        {
-            txtGetal2.Text = "";
-            txtSom.Text = "√";
-            checkChecker();
         }
 
         public void checkChecker()
         {
-            if (radioWortel.Checked == true)
+
+            //Re-Enter the numbers
+            updateCalc();
+
+            //If root is selected only allow input of getal1
+            if (radio6.Checked == true)
             {
 
                 txtGetal2.Enabled = false;
@@ -148,17 +152,17 @@ namespace Calculator
         //Het genereren vam de reeksen. 
         private void btnToon_Click(object sender, EventArgs e)
         {
-            //Even
+            
             if (radioEven.Checked)
             {
                 tbGenerated.Text = generate_Even(Convert.ToInt32(reeksAmount.Value));
             }
-            //Fionacci
+            
             else if (radioFionacci.Checked)
             {
                 tbGenerated.Text = generate_Fibonacci(Convert.ToInt32(reeksAmount.Value) + 2);
             }
-            //Prime
+            
             else if (radioPriem.Checked)
             {
                 tbGenerated.Text = generate_Prime(Convert.ToInt32(reeksAmount.Value));
@@ -168,102 +172,137 @@ namespace Calculator
         //Generate even numbers
         public string generate_Even(int times)
         {
-            //Amount of found even numbers
-            int found = 0;
-            //Empty string to add numbers to
+            int i = 1, found = 0;
             string even = string.Empty;
-            //Random data class
-            Random num = new Random();
-
-            //While found isn't times keep looking for new even numbers
             while (found != times)
             {
-                //Generate random number
-                int random = num.Next(100);
-                //Check if that random number is even
-                if (random % 2 == 0)
+                if (i % 2 == 0)
                 {
-                    //Add to found
                     found++;
-                    //Add to even number list
-                    even = String.Concat(even, random.ToString() + ", ");
+                    even = String.Concat(even, i.ToString() + ", ");
                 }
+                i++;
             }
-            //Return final even number list as string
             return even.Remove(even.Length - 2);
         }
 
         //Generate prime numbers
         public string generate_Prime(int times)
         {
-            //Amount of found prime numbers
-            int found = 0;
-            //Empty string to add numbers to
+            int i = 1, found = 0;
             string prime = string.Empty;
-            //Random data class
-            Random num = new Random();
 
-            //While found isn't times keep looking for new prime numbers
             while (found != times)
             {
-                //Generate random number
-                int random = num.Next(10);
-                //Check if number is prime number
-                if (isPrime(random))
+                if (isPrime(i))
                 {
 
-                    //Add to found
                     found++;
-                    //Add to prime number list
-                    prime = String.Concat(prime, num.Next(10).ToString() + ", ");
+                    prime = String.Concat(prime, i.ToString() + ", ");
                 };
+                i++;
             }
-            //Return final prime number list as string
             return prime.Remove(prime.Length - 2);
         }
 
         //Generate Fibonacci numbers
         public string generate_Fibonacci(int times)
         {
-            int n1 = 0; int n2 = 1; int n3; int i = 0;
-            //Amount of found prime numbers
-            int found = 0;
-            //Empty string to add numbers to
+            int found = 0; 
+            long n1 = 0, n2 = 1, n3;
             string fibonacci = string.Empty;
-            //Random data class
-            Random num = new Random();
 
-            int number = num.Next(10);
-            for (i = 2; i < times; ++i) //loop starts from 2 because 0 and 1 are already printed    
+            if(times > 0)
             {
+                found++;
+                fibonacci = String.Concat(fibonacci, n1.ToString() + ", ");
+            }
+            if (times > 1)
+            {
+                found++;
+                fibonacci = String.Concat(fibonacci, n2.ToString() + ", ");
+            }
+
+            Console.WriteLine("bruh");
+
+            while (found != times)
+            {
+                found++;
                 n3 = n1 + n2;
-                Console.Write(n3 + " ");
                 n1 = n2;
                 n2 = n3;
-
                 fibonacci = String.Concat(fibonacci, n3.ToString() + ", ");
-
-                //n3 is true
             }
             return fibonacci.Remove(fibonacci.Length - 2);
         }
 
-        //Check if prime number
+        //Check if prime
         public static bool isPrime(int number)
         {
-            //Check if number complies with prime number rules
             if (number <= 1) return false;
             if (number == 2) return true;
             if (number % 2 == 0) return false;
 
-            //Check if its even
             var boundary = (int)Math.Floor(Math.Sqrt(number));
             for (int i = 3; i <= boundary; i += 2)
                 if (number % i == 0)
                     return false;
 
-            //Return true if number is prime number
             return true;
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //Run change calc function on text edit of Getal1 & Getal2
+        public void inter_TextChanged(object sender, EventArgs e)
+        {
+            updateCalc();
+        }
+
+        //Enter calc values into calculation preview textbox
+        public void updateCalc()
+        { 
+            foreach (RadioButton button in ActionBox.Controls.OfType<RadioButton>())
+            {
+                if (button.Checked)
+                {
+                    int caseID = Convert.ToInt32(button.Tag);
+                    switch (caseID)
+                    {
+                        case 1:
+                            txtSom.Text = txtGetal1.Text + "+" + txtGetal2.Text;
+                            break;
+                        case 2:
+                            txtSom.Text = txtGetal1.Text + "-" + txtGetal2.Text;
+                            break;
+                        case 3:
+                            txtSom.Text = txtGetal1.Text + "*" + txtGetal2.Text;
+                            break;
+                        case 4:
+                            txtSom.Text = txtGetal1.Text + "/" + txtGetal2.Text;
+                            break;
+                        case 5:
+                            txtSom.Text = txtGetal1.Text + "²" + txtGetal2.Text;
+                            break;
+                        case 6:
+                            txtSom.Text = txtGetal1.Text + "√";
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void HQS_Calculator_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbGenerated_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
