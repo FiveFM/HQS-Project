@@ -1,0 +1,9 @@
+.container-fluid {
+  overflow-x: hidden;
+}
+.container-fluid h1 {
+  margin: 10px;
+}
+.container-fluid .col {
+  margin: 5px;
+}

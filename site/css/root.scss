@@ -1,28 +1,6 @@
-@use "@material/button";
-@use '@material/icon-button';
-@use '@material/textfield/mdc-text-field';
-@use '@material/top-app-bar/mdc-top-app-bar';
-@use "@material/typography/mdc-typography";
-@use "@material/drawer";
-@use "@material/list";
-
-@include drawer.core-styles;
-@include drawer.dismissible-core-styles;
-@include drawer.modal-core-styles;
-@include list.core-styles;
-@include button.core-styles;
-@include icon-button.core-styles;
-
-@import '@material/button';
-@import '@material/icon-button';
-@import '@material/textfield/mdc-text-field';
-@import '@material/top-app-bar/mdc-top-app-bar';
-@import '@material/drawer';
-@import '@material/list';
-
 :root {
-    --mdc-theme-primary: #40c4ff;
-    --mdc-theme-background: #ffffff;
+    --theme-primary: #3f51b5;
+    --theme-background: #ffffff;
     --divider-color: rgba(0, 0, 0, 0.12);
     --el1: #212121;
     --el2: #eeeeee;
@@ -46,41 +24,25 @@ body {
     height: 100vh;
     width: 100vw;
 
-    .app-bar {
-        position: relative;
-        z-index: 9;
+    .theme-primary {
+        background-color: var(--theme-primary);
     }
 
-    .mdc-drawer {
-        margin-top: -64px;
-        @include item-activated-text-ink-color(#40c4ff);
-        @include item-activated-icon-ink-color(#40c4ff);
+    .navbar {
+        min-width: 100vw;
     }
 
-    .mdc-drawer-app-content {
-        transition: all 0.2s ease-in-out;
-
-        .main-content {
-            margin-top: -64px;
-            background-color: white;
-
-            .info {
-                margin: 20px;
-            }
-
-            .row {
-                .col {
-                    display: flex;
-                    justify-content: center;
-                    padding: 12px;
-                    height: fit-content;
-                }
-            }
-        }
-    }
     .footer {
         top: 100vh;
         width: 100vw;
         position: absolute;
+    }
+
+    .main-content-inner {
+        height: calc(100vh - 56px);
+        overflow-y: auto;
+        max-width: 100vw !important;
+        min-width: 100vw !important;
+        width: 100vw !important;
     }
 }

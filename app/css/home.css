@@ -1,0 +1,23 @@
+body {
+  height: calc(100vh - 64px);
+}
+body .home {
+  position: absolute;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  height: calc(100vh - 64px);
+  background-color: transparent;
+}
+body .home .intro img {
+  margin: 32px;
+  height: 128px;
+  width: auto;
+}
+body .home .intro .info {
+  margin: 32px 35px 0 35px;
+}
+body .info {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}

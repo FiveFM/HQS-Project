@@ -1,0 +1,46 @@
+:root {
+  --theme-primary: #3f51b5;
+  --theme-background: #ffffff;
+  --divider-color: rgba(0, 0, 0, 0.12);
+  --el1: #212121;
+  --el2: #eeeeee;
+  --drawer-bg: #eeeeee;
+  --btn-color: #cccccc;
+  --color: #404040;
+  --light-color: #ffffff;
+  --dark-color: #ffffff;
+}
+
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+*:focus {
+  outline: none !important;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+body .theme-primary {
+  background-color: var(--theme-primary);
+}
+body .navbar {
+  min-width: 100vw;
+}
+body .footer {
+  top: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+body .main-content-inner {
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  max-width: 100vw !important;
+  min-width: 100vw !important;
+  width: 100vw !important;
+}
