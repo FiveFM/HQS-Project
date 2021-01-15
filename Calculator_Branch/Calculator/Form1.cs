@@ -7,21 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 
 namespace Calculator
 {
-    public partial class HQS_Calculator : MaterialForm
+    public partial class HQS_Calculator : Form
 
     {
         public HQS_Calculator()
         {
             InitializeComponent();
-
-            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
 
         private void radioSelect(object sender, EventArgs e)
