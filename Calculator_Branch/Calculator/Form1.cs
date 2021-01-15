@@ -7,21 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 
 namespace Calculator
 {
-    public partial class HQS_Calculator : MaterialForm
+    public partial class HQS_Calculator : Form
 
     {
         public HQS_Calculator()
         {
             InitializeComponent();
-
-            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
         }
 
         private void radioSelect(object sender, EventArgs e)
@@ -100,6 +94,11 @@ namespace Calculator
                             txtUitkomst.Text = (num1 * num2).ToString();
                             break;
                         case 4:
+                            if(num1 == 0 || num2 ==0)
+                            {
+                                MessageBox.Show("Can't divide by 0");
+                                return;
+                            }
                             txtUitkomst.Text = (num1 / num2).ToString();
                             break;
                         case 5:
@@ -222,8 +221,6 @@ namespace Calculator
                 found++;
                 fibonacci = String.Concat(fibonacci, n2.ToString() + ", ");
             }
-
-            Console.WriteLine("bruh");
 
             while (found != times)
             {
