@@ -100,6 +100,11 @@ namespace Calculator
                             txtUitkomst.Text = (num1 * num2).ToString();
                             break;
                         case 4:
+                            if(num1 == 0 || num2 ==0)
+                            {
+                                MessageBox.Show("Can't divide by 0");
+                                return;
+                            }
                             txtUitkomst.Text = (num1 / num2).ToString();
                             break;
                         case 5:
@@ -222,8 +227,6 @@ namespace Calculator
                 found++;
                 fibonacci = String.Concat(fibonacci, n2.ToString() + ", ");
             }
-
-            Console.WriteLine("bruh");
 
             while (found != times)
             {
