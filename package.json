@@ -11,11 +11,17 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.3",
-    "parcel": "^1.12.4"
+    "json": "^10.0.0",
+    "site": "^2.50.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "sass": "^1.32.0"
+    "parcel": "^1.12.4",
+    "postcss": "^8.2.4",
+    "postcss-modules": "^4.0.0",
+    "postcss-uncss": "^0.17.0",
+    "sass": "^1.32.0",
+    "uncss": "^0.17.3"
   },
   "sass": {
     "includePaths": [

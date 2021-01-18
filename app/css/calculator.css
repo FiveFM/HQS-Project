@@ -1,3 +1,10 @@
+.download-btn {
+  position: absolute;
+  top: 8.5px;
+  right: 72px;
+  z-index: 89;
+}
+
 .container-fluid {
   overflow-x: hidden;
 }

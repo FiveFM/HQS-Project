@@ -7,10 +7,9 @@ window.goto = function goto(event = 'Home', page = event) {
         document.querySelectorAll('.nav-link.active').forEach((elem) => {
             elem.classList.remove('active');
         });
-    
+
         event.classList.add('active');
     }
-
 
     //Jquery function that dynamically loads x.html into the main content of the page by id
     $(function () {

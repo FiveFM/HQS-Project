@@ -1,25 +1,143 @@
-body {
+.landing {
+    background: #2c2c2c;
+    width: 100%;
+    height: 100%;
+    top: 0;
 
-    height: calc(100vh - 64px);
-    .home {
+    .caption {
         position: absolute;
-        backdrop-filter: blur(4px);
-        height: calc(100vh - 64px);
-        background-color: transparent;
+        animation: captionani 1s forwards;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        font-family: "almond_nougat";
+        h1 {
+            font-size: 7.5vw;
+            color: rgb(235, 192, 113);
+        }
 
-        .intro {
-            img {
-                margin: 32px;
-                height: 128px;
-                width: auto;
+        h3 {
+            font-size: 3vw;
+            color: orange;
+        }
+    }
+
+    .display {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        animation: imgani 1s forwards;
+        transform: perspective(45deg);
+
+        img {
+            width: 50vw;
+        }
+    }
+}
+
+@keyframes captionani {
+    from {
+        margin-top: -10%;
+    }
+
+    to {
+        margin-top: 2.5%;
+    }
+}
+
+@keyframes imgani {
+    from {
+        margin-top: -10%;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 17.5%;
+        opacity: 1;
+    }
+}
+
+//Mobile
+@media (max-width: 720px) {
+    .landing {
+        .caption {
+            h1 {
+                font-size: 17.5vw !important;
             }
 
-            .info {
-                margin: 32px 35px 0 35px;
+            h3 {
+                font-size: 6.25vw !important;
             }
         }
     }
-    .info {
-        height: fit-content;
+
+    .display {
+        img {
+            width: 85vw !important;
+        }
+    }
+
+    @keyframes captionani {
+        from {
+            margin-top: -10%;
+        }
+
+        to {
+            margin-top: 24px;
+        }
+    }
+
+    @keyframes imgani {
+        from {
+            margin-top: -10%;
+        }
+
+        to {
+            margin-top: 196px;
+        }
+    }
+}
+
+//Large screens
+@media (min-width: 1620px) {
+    .landing {
+        .caption {
+            h1 {
+                font-size: 120px !important;
+            }
+
+            h3 {
+                font-size: 48px !important;
+            }
+        }
+    }
+
+    .display {
+        img {
+            width: 810px !important;
+        }
+    }
+
+    @keyframes captionani {
+        from {
+            margin-top: -10%;
+        }
+
+        to {
+            margin-top: 56px;
+        }
+    }
+
+    @keyframes imgani {
+        from {
+            margin-top: -10%;
+        }
+
+        to {
+            margin-top: 296px;
+        }
     }
 }

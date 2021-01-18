@@ -11,6 +11,10 @@
   --dark-color: #ffffff;
 }
 
+@font-face {
+  font-family: "almond_nougat";
+  src: url("../assets/fonts/almond_nougat/almond_nougat.ttf");
+}
 * {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -31,11 +35,49 @@ body .theme-primary {
 }
 body .navbar {
   min-width: 100vw;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background: var(--theme-primary);
+  z-index: 9;
+}
+body .navbar .navbar-brand {
+  margin-left: 48px;
+}
+body .navbar .navbar-collapse {
+  margin-left: 38px;
+}
+body .navbar li {
+  margin-right: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: transparent;
+}
+body .navbar li .active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  color: white !important;
+}
+body .navbar li a {
+  padding-left: 8px !important;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+body .navbar li :active {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  color: white !important;
+}
+body .navbar li :hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 body .footer {
   top: 100vh;
   width: 100vw;
   position: absolute;
+  background-color: var(--theme-primary);
+  color: white;
 }
 body .main-content-inner {
   height: calc(100vh - 56px);
@@ -43,4 +85,15 @@ body .main-content-inner {
   max-width: 100vw !important;
   min-width: 100vw !important;
   width: 100vw !important;
+}
+
+@media (max-width: 960px) {
+  body .navbar li .active {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body .navbar li :hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
