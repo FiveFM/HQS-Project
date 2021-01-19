@@ -1,0 +1,10 @@
+.container h1 {
+  margin: 10px;
+}
+.container .col {
+  margin: 5px;
+}
+
+.modal-body img {
+  width: 100%;
+}

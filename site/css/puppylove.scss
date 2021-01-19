@@ -1,10 +1,14 @@
-.container-fluid {
-    overflow-x: hidden;
+.container {
     h1 {
         margin: 10px;
     }
 
     .col {
         margin: 5px;
+    }
+}
+.modal-body {
+    img {
+        width: 100%;
     }
 }

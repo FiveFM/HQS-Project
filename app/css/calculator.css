@@ -2,15 +2,15 @@
   position: absolute;
   top: 8.5px;
   right: 72px;
-  z-index: 89;
+  z-index: 899;
 }
 
-.container-fluid {
+.container {
   overflow-x: hidden;
 }
-.container-fluid h1 {
+.container h1 {
   margin: 10px;
 }
-.container-fluid .col {
+.container .col {
   margin: 5px;
 }

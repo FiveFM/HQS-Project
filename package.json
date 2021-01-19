@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel site/html/*.html",
-    "build": "parcel build site/html/*.html --out-dir docs --public-url ./"
+    "build": "parcel build site/html/*.html --out-dir docs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "assets": "^3.0.1",
     "bootstrap": "^4.5.3",
     "json": "^10.0.0",
     "site": "^2.50.1"

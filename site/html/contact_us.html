@@ -1,0 +1,26 @@
+<head>
+<title>Contact us</title>
+<link rel="stylesheet" href="../css/contact_us.scss">
+</head>
+
+<form class="form shadow-sm" action="mailto:respons@hqsinternational.org" method="POST" enctype="text/plain">
+    <div class="form-group">
+        <label for="EmailInput">Email Adress</label>
+        <input type="email" class="form-control" id="EmailInput" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+    <label for="SelectGroup">Select a topic</label>
+    <select name="form-control" id="SelectGroup">
+        <option>Home page</option>
+        <option>Calculator</option>
+        <option>Puppylove</option>
+        <option>About us</option>
+    </select>
+
+<div class="form-group">
+    <label for="TextInput">Ask us anything about the topic you selected</label>
+    <textarea class="form-control" id="TextInput" rows="3"></textarea>
+</div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
