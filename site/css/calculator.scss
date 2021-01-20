@@ -13,5 +13,11 @@
 
     .col {
         margin: 5px;
+
+        .card {
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
     }
 }

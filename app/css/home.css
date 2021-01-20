@@ -42,10 +42,22 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-animation: img 1s forwards;
           animation: img 1s forwards;
   -webkit-transform: perspective(45deg);
           transform: perspective(45deg);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.landing .display p {
+  font-size: 20px;
+  margin-top: 20px;
+  color: white;
 }
 .landing .display img {
   width: 50vw;

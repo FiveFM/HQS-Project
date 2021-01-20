@@ -31,8 +31,17 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
         animation: img 1s forwards;
         transform: perspective(45deg);
+
+        flex-direction: column;
+
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+            color: white;
+        }
 
         img {
             width: 50vw;

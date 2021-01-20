@@ -58,7 +58,12 @@
         <!-- Footer -->
         <footer class="text-center text-lg-start footer">
             <div class="text-center p-3">
-                <a>SLB: Selim Serik klas: I0SDD, Max Keizers, Tyaro Leppink, Kjel Ottema, Niels Rolleman. </a>
+                <a id="footer-text"></a>
+                <script>
+                    //Set footer with dynamic text
+                    const date = new Date();
+                    document.querySelector('#footer-text').innerHTML = `© ${date.getFullYear()} Copyright: HQS - SLB: Selim Serik klas: I0SDD, Max Keizers, Tyaro Leppink, Kjel Ottema, Niels Rolleman. ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+                </script>
             </div>
         </footer>
     </body>

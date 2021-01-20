@@ -14,3 +14,7 @@
 .container .col {
   margin: 5px;
 }
+.container .col .card {
+  border-radius: 10px;
+  overflow: hidden;
+}

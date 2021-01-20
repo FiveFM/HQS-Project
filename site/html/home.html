@@ -14,6 +14,14 @@
             </div>
             <div class="display">
                 <img src="../assets/calculator.png" alt="" />
+                <p id="download-count"></p>
+
+                <script>
+                    console.log('bryg');
+                    $.get('https://api.github.com/repos/FiveFM/HQS-Project/releases', (data) => {
+                        document.querySelector('#download-count').textContent = `downloaded more than ${data[0].assets[0].download_count} times`;
+                    });
+                </script>
             </div>
         </div>
 

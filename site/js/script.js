@@ -21,6 +21,8 @@ goto();
 
 //BLockers
 
+/*
+
 //F12
 $(document).keydown(function (event) {
     if (event.keyCode == 123) {
@@ -44,3 +46,4 @@ $(document).on('keydown', function (e) {
 $(document).on('contextmenu', function (e) {
     e.preventDefault();
 });
+*/
