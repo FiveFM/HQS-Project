@@ -30,14 +30,14 @@ namespace Calculator
         private void InitializeComponent()
         {
             this.ActionBox = new System.Windows.Forms.GroupBox();
-            this.reeksAmount = new System.Windows.Forms.NumericUpDown();
-            this.textBoxContextMenuStrip1 = new MaterialSkin.Controls.TextBoxContextMenuStrip();
             this.radio1 = new System.Windows.Forms.RadioButton();
             this.radio2 = new System.Windows.Forms.RadioButton();
             this.radio3 = new System.Windows.Forms.RadioButton();
             this.radio4 = new System.Windows.Forms.RadioButton();
             this.radio5 = new System.Windows.Forms.RadioButton();
             this.radio6 = new System.Windows.Forms.RadioButton();
+            this.reeksAmount = new System.Windows.Forms.NumericUpDown();
+            this.textBoxContextMenuStrip1 = new MaterialSkin.Controls.TextBoxContextMenuStrip();
             this.txtGetal1 = new System.Windows.Forms.TextBox();
             this.txtGetal2 = new System.Windows.Forms.TextBox();
             this.txtSom = new System.Windows.Forms.TextBox();
@@ -76,31 +76,6 @@ namespace Calculator
             this.ActionBox.TabIndex = 27;
             this.ActionBox.TabStop = false;
             this.ActionBox.Text = "Actie";
-            // 
-            // reeksAmount
-            // 
-            this.reeksAmount.Location = new System.Drawing.Point(12, 383);
-            this.reeksAmount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.reeksAmount.Name = "reeksAmount";
-            this.reeksAmount.Size = new System.Drawing.Size(96, 20);
-            this.reeksAmount.TabIndex = 28;
-            this.reeksAmount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // textBoxContextMenuStrip1
-            // 
-            this.textBoxContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.textBoxContextMenuStrip1.Depth = 0;
-            this.textBoxContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxContextMenuStrip1.Name = "textBoxContextMenuStrip1";
-            this.textBoxContextMenuStrip1.Size = new System.Drawing.Size(123, 160);
             // 
             // radio1
             // 
@@ -176,6 +151,31 @@ namespace Calculator
             this.radio6.UseVisualStyleBackColor = true;
             this.radio6.CheckedChanged += new System.EventHandler(this.radioSelect);
             // 
+            // reeksAmount
+            // 
+            this.reeksAmount.Location = new System.Drawing.Point(12, 383);
+            this.reeksAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.reeksAmount.Name = "reeksAmount";
+            this.reeksAmount.Size = new System.Drawing.Size(96, 20);
+            this.reeksAmount.TabIndex = 28;
+            this.reeksAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // textBoxContextMenuStrip1
+            // 
+            this.textBoxContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.textBoxContextMenuStrip1.Depth = 0;
+            this.textBoxContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxContextMenuStrip1.Name = "textBoxContextMenuStrip1";
+            this.textBoxContextMenuStrip1.Size = new System.Drawing.Size(123, 160);
+            // 
             // txtGetal1
             // 
             this.txtGetal1.Location = new System.Drawing.Point(12, 24);
@@ -239,12 +239,15 @@ namespace Calculator
             // radioPriem
             // 
             this.radioPriem.AutoSize = true;
+            this.radioPriem.BackColor = System.Drawing.Color.Transparent;
+            this.radioPriem.Checked = true;
             this.radioPriem.Location = new System.Drawing.Point(12, 314);
             this.radioPriem.Name = "radioPriem";
             this.radioPriem.Size = new System.Drawing.Size(51, 17);
             this.radioPriem.TabIndex = 57;
+            this.radioPriem.TabStop = true;
             this.radioPriem.Text = "Priem";
-            this.radioPriem.UseVisualStyleBackColor = true;
+            this.radioPriem.UseVisualStyleBackColor = false;
             // 
             // radioEven
             // 
@@ -324,7 +327,7 @@ namespace Calculator
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.ClientSize = new System.Drawing.Size(477, 474);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -345,6 +348,7 @@ namespace Calculator
             this.Controls.Add(this.reeksAmount);
             this.Controls.Add(this.ActionBox);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
